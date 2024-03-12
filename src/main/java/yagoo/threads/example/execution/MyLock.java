@@ -9,9 +9,10 @@ public class MyLock implements Lock {
 	private volatile long threadID;
 	private volatile boolean[] flag = new boolean[Thread.activeCount()];
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public void lock() {
-		int i = (int) (Thread.activeCount() - Thread.currentThread().getId() - 1);
+        int i = (int) (Thread.activeCount() - Thread.currentThread().getId() - 1);
 		flag[i] = true;
 		threadID = Thread.currentThread().getId();
 		while (flag[i] && threadID == Thread.currentThread().getId()) { /* NOP */};
