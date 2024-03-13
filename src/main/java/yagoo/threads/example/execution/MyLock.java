@@ -36,6 +36,7 @@ public class MyLock implements Lock {
 		return false;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void unlock() {
 		int i = (int) (Thread.activeCount() - Thread.currentThread().getId() - 1);
