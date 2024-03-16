@@ -4,7 +4,8 @@ import java.util.stream.Stream;
 
 public class VariableParamsMeth {
 	
-	public static void main(String[] args) {
+	@SuppressWarnings("removal")
+    public static void main(String[] args) {
 		Double d = (double) 2;
 		Integer i = (int) 2.0;
 		Long l = 12L;
