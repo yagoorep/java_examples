@@ -23,7 +23,7 @@ public class MeasureSpeedupDemo {
         @Override
         protected Long compute() {
             long result = 0;
-            if (hi - lo <  50_000) { // base case threshold
+            if (hi - lo <  100_000L) { // base case threshold
                 result = sequentialSum(lo, hi);
             } else {
                 long middle = ((hi - lo) >> 1) + lo; // middle index for split
@@ -81,8 +81,8 @@ public class MeasureSpeedupDemo {
             throw new Error("ERROR: sequentialResult and parallelResult do not match!");
         System.out.format("Average Sequential Time: %.1f ms%n", sequentialTime);
         System.out.format("Average Parallel Time: %.1f ms%n", parallelTime);
-        System.out.format("Speedup: %.2f%n", sequentialTime/parallelTime);
-        System.out.format("Efficiency: %.2f%%%n", 100*(sequentialTime/parallelTime)/Runtime.getRuntime().availableProcessors());
+        System.out.format("Speedup: %.2f%n", sequentialTime / parallelTime);
+        System.out.format("Efficiency: %.2f%%%n", 100 * (sequentialTime / parallelTime) / Runtime.getRuntime().availableProcessors());
     }
 
 }
