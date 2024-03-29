@@ -138,6 +138,7 @@ public class MatrixMultiply {
             
             // submit tasks to calculate partial results
             int chunkSize = (int) Math.ceil((double) numRowsA / numWorkers);
+            @SuppressWarnings("unchecked")
             Future<int[][]>[] futures = new Future[numWorkers];
             for (int w = 0; w < numWorkers; w++) {
                 int start = Math.min(chunkSize * w, numRowsA);
