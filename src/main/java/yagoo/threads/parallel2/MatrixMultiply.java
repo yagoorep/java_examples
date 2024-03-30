@@ -9,8 +9,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class MatrixMultiply {
-    // Rounds
-    final static int NUM_EVAL_RUNS = 5;
+    // Options
+    final static int NUM_EVAL_RUNS = 5; // Rounds
     final static boolean SHOW_MATRIX = true;
     
     private static void showMatrix(int[][] matrix) {
