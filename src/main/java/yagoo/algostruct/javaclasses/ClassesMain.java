@@ -13,6 +13,7 @@ class ClassesMain {
 	@FunctionalInterface
 	public static interface InnerInterface {
 		public void out();
+		public String toString();
 	}
 	
 	// public or protected or private static nested class
